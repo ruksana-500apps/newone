@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+#search {
+  padding: 12px 20px 12px 40px;
+}
+
+#mytable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#mytable td {
+  text-align: left;
+  padding: 12px;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<center><h2>To Do List</h2></center>
+
+<center><input type="text" id="search" onkeyup="search()" placeholder="names.."></center>
+
+<table id="mytable" border="none">
+  <tr>
+    <td>Red</td>
+    <td id="2"><button onclick="delete_R()">delete</button></td>
+  </tr>
+  <tr>
+    <td>Orange</td>
+    <td id="2"><button onclick="delete_O()">delete</button></td>
+  </tr>
+  <tr>
+    <td>Green</td>
+    <td id="2"><button onclick="delete_G()">delete</button></td>
+  </tr>
+  <tr>
+    <td>Yellow</td>
+    <td id="2"><button onclick="delete_Y()">delete</button></td>
+  </tr>
+  <tr>
+    <td>Pink</td>
+    <td id="2"><button onclick="delete_P()">delete</button></td>
+  </tr>
+  <tr>
+    <td>Marrown</td>
+    <td id="2"><button onclick="delete_M()">delete</button></td>
+  </tr>
+  <tr>
+    <td>Brown</td>
+    <td id="2"><button onclick="delete_Br()">delete</button></td>
+  </tr>
+  <tr>
+    <td>Black</td>
+    <td id="2"><button onclick="delete_Bl()">delete</button></td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
